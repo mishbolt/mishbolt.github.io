@@ -1,8 +1,8 @@
 # Mikhail Baltushkin — personal website
 
-A dark, responsive, research-meets-engineering portfolio for [Mikhail Baltushkin](https://github.com/mishbolt). Designed for **GitHub Pages** with **zero build dependencies**.
+A responsive personal website for research, projects, and teaching for [Mikhail Baltushkin](https://github.com/mishbolt). Designed for **GitHub Pages** with **zero build dependencies**.
 
-The website includes an animated mathematical phase-portrait illustration, project case studies, an academic research profile, publication links, teaching experience, and public-safe PDF copies of the resume and CV.
+The website includes a restrained mathematical phase-space illustration, project summaries, a research and publications page, teaching experience, and public-facing PDF copies of the resume and CV. The default theme uses brighter navy and blue accents; visitors can also switch to a light theme.
 
 ## Publish at `https://mishbolt.github.io`
 
@@ -38,7 +38,7 @@ Open <http://localhost:8000/>. You can also open `index.html` locally, although 
 ## Edit the website
 
 - **Text/content:** Edit `tools/build_site.py`, which contains the page content and templates. Then run `python3 tools/build_site.py` to regenerate all eight HTML files.
-- **Styling:** Edit `assets/css/styles.css`. The site uses Space Grotesk and DM Sans when web fonts are available, with system fallbacks.
+- **Styling:** Edit `assets/css/styles.css`. The site uses Space Grotesk and DM Sans when web fonts are available, with system fallbacks. The final section of the stylesheet contains the revised theme and layout rules.
 - **Animation and navigation:** Edit `assets/js/site.js`. The animated phase portrait on the homepage is explicitly *decorative / illustrative*, not original measured research data. It respects reduced-motion preferences.
 - **Figures:** `assets/images/poincare-sections.webp` includes two plots cropped from Mikhail's own double-pendulum research report. Other illustrations are CSS/SVG artwork.
 - **Downloads:** Replace `assets/docs/cv.pdf` and `assets/docs/resume.pdf` with updated public-facing documents when needed. They have deliberately omitted personal phone, immigration status, and other people's reference emails. Do **not** replace these PDFs with the private versions without checking them.
@@ -77,4 +77,4 @@ The website has been populated from public GitHub repositories, a 2025 journal a
 
 ## Credits and licensing
 
-Website design and code: generated for Mikhail Baltushkin. Academic content, photographs (if added), and research figures remain the property of their respective authors. The linked 2025 paper is open access at [DOI 10.47443/dml.2025.071](https://doi.org/10.47443/dml.2025.071). No third-party stock imagery is included.
+Website design and code: prepared for Mikhail Baltushkin. Academic content, photographs (if added), and research figures remain the property of their respective authors. The linked 2025 paper is open access at [DOI 10.47443/dml.2025.071](https://doi.org/10.47443/dml.2025.071). No third-party stock imagery is included.
