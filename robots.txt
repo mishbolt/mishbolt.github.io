@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://mishbolt.github.io/sitemap.xml
