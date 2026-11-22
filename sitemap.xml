@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url><loc>https://mishbolt.github.io/</loc></url>
-<url><loc>https://mishbolt.github.io/projects.html</loc></url>
+<url><loc>https://mishbolt.github.io/index.html</loc></url>
 <url><loc>https://mishbolt.github.io/research.html</loc></url>
+<url><loc>https://mishbolt.github.io/projects.html</loc></url>
 <url><loc>https://mishbolt.github.io/teaching.html</loc></url>
 <url><loc>https://mishbolt.github.io/about.html</loc></url>
 <url><loc>https://mishbolt.github.io/work/tda-pde.html</loc></url>
-<url><loc>https://mishbolt.github.io/work/double-pendulum.html</loc></url>
 <url><loc>https://mishbolt.github.io/work/game-theory.html</loc></url>
+<url><loc>https://mishbolt.github.io/work/double-pendulum.html</loc></url>
 </urlset>

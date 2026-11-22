@@ -1,80 +1,50 @@
 # Mikhail Baltushkin — personal website
 
-A responsive personal website for research, projects, and teaching for [Mikhail Baltushkin](https://github.com/mishbolt). Designed for **GitHub Pages** with **zero build dependencies**.
+This is a static, dependency-free website intended for **GitHub Pages**. It includes research, publications, selected projects, teaching, and public PDF copies of the CV and industry resume. The design is deliberately text-led, without counters or promotional taglines.
 
-The website includes a restrained mathematical phase-space illustration, project summaries, a research and publications page, teaching experience, and public-facing PDF copies of the resume and CV. The default theme uses brighter navy and blue accents; visitors can also switch to a light theme.
+## Important: publishing the correct version
 
-## Publish at `https://mishbolt.github.io`
+The repository root (the top level of the GitHub repository) must contain **`index.html`**, `research.html`, `projects.html`, `teaching.html`, `about.html`, `assets/`, and `work/` directly. Do **not** upload the enclosing ZIP or a folder around these files.
 
-1. Sign in to GitHub and create a **public** repository named exactly **`mishbolt.github.io`** at <https://github.com/new>.
-2. Upload **the contents of this directory**, not a ZIP archive and not a single enclosing folder. Keep `index.html` in the repository root. You can use **Add file → Upload files** in GitHub, or use Git on your computer.
-3. After committing the files, open repository **Settings → Pages**.
-4. Select **Deploy from a branch**, then **`main`** and **`/(root)`**, and **Save**. The published site should appear at <https://mishbolt.github.io/> once Pages completes deployment.
+For an existing repository:
 
-A repository created from your account and named `mishbolt.github.io` is a **user website**, not a project subdirectory website. Therefore, relative links in this starter use the expected site root. 
+1. Extract the ZIP and open this folder.
+2. Copy/upload **every file and folder inside** it to the same paths in your GitHub repository, overwriting existing files. In particular, replace **`index.html`** and **`assets/css/styles.css`**. Removing files from an old deployment is optional unless they're used by old links.
+3. Confirm that GitHub shows the new `index.html` on your repository's **main** branch. The new homepage starts with **“Mikhail Baltushkin”** as the main heading; there is no promotional headline above it.
+4. Under **Settings → Pages**, check that the source is **Deploy from a branch**, **main**, **/(root)**. If it's set to `docs/` or a different branch, the wrong version may be deployed.
+5. After a successful deployment, check `https://mishbolt.github.io/index.html?v=3`. The `?v=3` suffix helps bypass local browser caches. Hard-refresh if necessary (Mac: Command-Shift-R). GitHub Pages can take a little time to publish a new commit.
 
-### Alternative: upload with Git (Mac Terminal)
+You can publish via Git on your computer (adjust the ZIP path if needed):
 
-```sh
-# Inside the downloaded/extracted mishbolt.github.io directory:
-git init
-git add .
-git commit -m "Launch personal website"
-git branch -M main
-git remote add origin https://github.com/mishbolt/mishbolt.github.io.git
-git push -u origin main
+```bash
+git clone https://github.com/mishbolt/mishbolt.github.io.git
+cd mishbolt.github.io
+unzip -o ~/Downloads/mishbolt_professional_website_v3.zip -d .
+git add -A
+git commit -m "Replace website content and design"
+git push origin main
 ```
 
-Create the remote repository first. The `git push` command requires your normal GitHub credentials.
+This ZIP contains files at its root (not inside another `mishbolt.github.io` folder). If the existing repository uses a different publishing branch, use that branch instead.
+
+Or use **Add file → Upload files** on GitHub while viewing the repository root. GitHub's web upload has limits; Git is more reliable for replacing multiple folders.
 
 ## Preview locally
 
-```sh
+In the folder containing `index.html`, run:
+
+```bash
 python3 -m http.server 8000
 ```
 
-Open <http://localhost:8000/>. You can also open `index.html` locally, although a local HTTP server is more representative of production.
+Open http://localhost:8000/. No Node, Quarto, build command, or package installation is required.
 
-## Edit the website
+## Editing
 
-- **Text/content:** Edit `tools/build_site.py`, which contains the page content and templates. Then run `python3 tools/build_site.py` to regenerate all eight HTML files.
-- **Styling:** Edit `assets/css/styles.css`. The site uses Space Grotesk and DM Sans when web fonts are available, with system fallbacks. The final section of the stylesheet contains the revised theme and layout rules.
-- **Animation and navigation:** Edit `assets/js/site.js`. The animated phase portrait on the homepage is explicitly *decorative / illustrative*, not original measured research data. It respects reduced-motion preferences.
-- **Figures:** `assets/images/poincare-sections.webp` includes two plots cropped from Mikhail's own double-pendulum research report. Other illustrations are CSS/SVG artwork.
-- **Downloads:** Replace `assets/docs/cv.pdf` and `assets/docs/resume.pdf` with updated public-facing documents when needed. They have deliberately omitted personal phone, immigration status, and other people's reference emails. Do **not** replace these PDFs with the private versions without checking them.
-- **Web preview:** `assets/images/social-card.svg` is used for social links; update its text or colors if the design changes.
+- Edit the page text directly in each `.html` file.
+- Edit `assets/css/styles.css` for colors, layout, and typography.
+- Edit `assets/js/site.js` for navigation, dark mode, and the *decorative* animated figure on the homepage.
+- Replace `assets/docs/cv.pdf` and `assets/docs/resume.pdf` if needed, but verify they are public-safe versions before publishing.
+- The Poincaré-section figure in `assets/images/` comes from the supplied double-pendulum report.
 
-There is no framework, database, API key, analytics tracker, or npm dependency. The only optional external dependency is Google Fonts; the site works without it.
-
-## Structure
-
-```text
-mishbolt.github.io/
-├── index.html             Homepage
-├── projects.html          Project index
-├── research.html          Research interests, article and thesis
-├── teaching.html          Teaching and Putnam program
-├── about.html             Short bio, skills and education
-├── work/
-│   ├── tda-pde.html
-│   ├── double-pendulum.html
-│   └── game-theory.html
-├── assets/
-│   ├── css/styles.css
-│   ├── js/site.js
-│   ├── docs/{cv,resume}.pdf
-│   └── images/{favicon,social-card}.svg and figure
-├── tools/build_site.py
-├── .nojekyll
-└── README.md
-```
-
-## Content checks before making it public
-
-The website has been populated from public GitHub repositories, a 2025 journal article, the supplied personal CV/resume, and a supplied double-pendulum research report. Please review every page for accuracy before uploading. In particular, ensure your institution and role titles, quantitative results, current research interests, and contact address still reflect how you wish to present yourself.
-
-**Potential future additions:** a headshot if you want one, links to your thesis in an official repository, dedicated pages for recent research *after you choose to publicize it*, talk slides, and mathematical notes written in Quarto and exported to HTML. Do not publish confidential collaborations, unpublished results, or students' personal information.
-
-## Credits and licensing
-
-Website design and code: prepared for Mikhail Baltushkin. Academic content, photographs (if added), and research figures remain the property of their respective authors. The linked 2025 paper is open access at [DOI 10.47443/dml.2025.071](https://doi.org/10.47443/dml.2025.071). No third-party stock imagery is included.
+The name, institution, academic details, and links are drawn from the supplied CV/resume, published paper, public GitHub projects, and research report. Review personal details and project descriptions before making them public.
